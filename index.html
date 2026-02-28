@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year Progress 2026</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="ambient-background">
+  <div class="seasonal-overlay" id="seasonalOverlay"></div>
+  <div class="particles" id="particles"></div>
+</div>
+
+<div class="container">
+  <div class="year-card">
+    <div class="card-glow"></div>
+    
+    <div class="header-section">
+      <div class="year-badge" id="yearBadge">2026</div>
+      <h1 class="main-title">Year Progress</h1>
+      <div class="season-indicator" id="seasonIndicator">
+        <span class="season-icon">🌸</span>
+        <span class="season-name">Spring</span>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="circular-progress">
+        <svg class="progress-ring" viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle class="progress-ring-bg" cx="100" cy="100" r="85"/>
+          <circle class="progress-ring-fill" id="progressRingFill" cx="100" cy="100" r="85"/>
+        </svg>
+        <div class="progress-center">
+          <div class="percentage-display" id="percentageDisplay">0.00%</div>
+          <div class="percentage-label">completed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-value" id="daysPassed">0</div>
+        <div class="stat-label">Days Passed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" id="daysRemaining">0</div>
+        <div class="stat-label">Days Left</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" id="weekNumber">0</div>
+        <div class="stat-label">Week</div>
+      </div>
+    </div>
+
+    <div class="linear-progress-wrapper">
+      <div class="linear-header">
+        <span>Monthly Breakdown</span>
+        <span id="monthProgress">0/12 months</span>
+      </div>
+      <div class="linear-track">
+        <div class="linear-fill" id="linearFill"></div>
+        <div class="month-markers">
+          <div class="month-marker" data-month="J"></div>
+          <div class="month-marker" data-month="F"></div>
+          <div class="month-marker" data-month="M"></div>
+          <div class="month-marker" data-month="A"></div>
+          <div class="month-marker" data-month="M"></div>
+          <div class="month-marker" data-month="J"></div>
+          <div class="month-marker" data-month="J"></div>
+          <div class="month-marker" data-month="A"></div>
+          <div class="month-marker" data-month="S"></div>
+          <div class="month-marker" data-month="O"></div>
+          <div class="month-marker" data-month="N"></div>
+          <div class="month-marker" data-month="D"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="datetime-section">
+      <div class="date-display" id="dateDisplay">February 28, 2026</div>
+      <div class="time-display" id="timeDisplay">00:00:00</div>
+      <div class="timezone" id="timezone">UTC</div>
+    </div>
+
+    <div class="milestone-section" id="milestoneSection">
+      <div class="milestone-icon">🎯</div>
+      <div class="milestone-text" id="milestoneText">Next milestone: 25%</div>
+    </div>
+
+    <div class="completion-banner" id="completionBanner">
+      <div class="banner-content">
+        <div class="banner-icon">🎉</div>
+        <div class="banner-text">Happy New Year 2027!</div>
+        <div class="banner-subtext">Resetting progress in <span id="countdown">00:00:00</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
