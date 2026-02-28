@@ -4,6 +4,7 @@
   --accent: #06b6d4;
   --success: #10b981;
   --warning: #f59e0b;
+  --danger: #ef4444;
   --dark: #0f172a;
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -308,7 +309,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Linear Progress */
+/* Linear Progress - FIXED FOR MOBILE */
 .linear-progress-wrapper {
   margin-bottom: 25px;
 }
@@ -351,28 +352,29 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 8px;
   align-items: center;
 }
 
 .month-marker {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .month-marker.active {
   background: rgba(255, 255, 255, 0.9);
   color: var(--dark);
-  transform: scale(1.2);
+  transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -509,7 +511,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Responsive */
+/* Mobile Responsive - FIXED */
 @media (max-width: 480px) {
   .year-card {
     padding: 25px;
@@ -539,7 +541,48 @@ body {
     height: 1px;
   }
   
+  /* FIXED: Show month markers on mobile with smaller size */
   .month-markers {
-    display: none;
+    padding: 0 4px;
+  }
+  
+  .month-marker {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+    border-radius: 4px;
+  }
+  
+  .linear-track {
+    height: 32px;
+  }
+  
+  .year-badge {
+    font-size: 20px;
+    padding: 6px 16px;
+  }
+  
+  .main-title {
+    font-size: 24px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .month-marker {
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
+  }
+  
+  .month-markers {
+    padding: 0 2px;
+  }
+}
+
+/* Ensure month markers are always visible */
+@media (max-width: 320px) {
+  .month-marker:nth-child(even) {
+    display: flex; /* Show all markers */
   }
 }
