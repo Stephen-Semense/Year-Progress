@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   position: relative;
   overflow-x: hidden;
   color: white;
@@ -309,7 +309,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Linear Progress - FIXED FOR MOBILE */
+/* Linear Progress - FIXED FOR ALL SIZES */
 .linear-progress-wrapper {
   margin-bottom: 25px;
 }
@@ -326,9 +326,9 @@ body {
 
 .linear-track {
   position: relative;
-  height: 40px;
+  height: 36px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -339,7 +339,7 @@ body {
   left: 0;
   height: 100%;
   background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-  border-radius: 12px;
+  border-radius: 10px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
@@ -352,30 +352,30 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 6px;
   align-items: center;
 }
 
 .month-marker {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 9px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .month-marker.active {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--dark);
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .month-marker::before {
@@ -511,7 +511,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Mobile Responsive - FIXED */
+/* Mobile Responsive - FIXED FOR 300PX */
 @media (max-width: 480px) {
   .year-card {
     padding: 25px;
@@ -541,20 +541,20 @@ body {
     height: 1px;
   }
   
-  /* FIXED: Show month markers on mobile with smaller size */
+  /* FIXED: Smaller markers for mobile */
   .month-markers {
     padding: 0 4px;
   }
   
   .month-marker {
-    width: 18px;
-    height: 18px;
-    font-size: 8px;
-    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
+    border-radius: 3px;
   }
   
   .linear-track {
-    height: 32px;
+    height: 28px;
   }
   
   .year-badge {
@@ -567,22 +567,59 @@ body {
   }
 }
 
-/* Extra small devices */
-@media (max-width: 360px) {
-  .month-marker {
-    width: 16px;
-    height: 16px;
-    font-size: 7px;
+/* FIXED: 300px width and below - Ultra compact markers */
+@media (max-width: 350px) {
+  body {
+    padding: 10px;
+  }
+  
+  .year-card {
+    padding: 20px;
+    border-radius: 20px;
   }
   
   .month-markers {
-    padding: 0 2px;
+    padding: 0 3px;
+  }
+  
+  .month-marker {
+    width: 14px;
+    height: 14px;
+    font-size: 6px;
+    border-radius: 2px;
+  }
+  
+  .linear-track {
+    height: 24px;
+  }
+  
+  .linear-header {
+    font-size: 11px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  .percentage-display {
+    font-size: 24px;
   }
 }
 
-/* Ensure month markers are always visible */
+/* FIXED: Very small screens - ensure visibility */
 @media (max-width: 320px) {
-  .month-marker:nth-child(even) {
-    display: flex; /* Show all markers */
+  .month-markers {
+    padding: 0 2px;
+  }
+  
+  .month-marker {
+    width: 12px;
+    height: 12px;
+    font-size: 5px;
+    border-radius: 2px;
+  }
+  
+  .linear-track {
+    height: 22px;
   }
 }
